@@ -90,8 +90,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         //Member Variables for the TextViews
-        private TextView mTitleText;
-        private TextView mInfoText;
+        private TextView mTitleText, mNewsHeading, mInfoText;
         private ImageView mImageView;
 
         /**
@@ -103,6 +102,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
 
             //Initialize the views
             mTitleText = itemView.findViewById(R.id.title);
+            mNewsHeading = itemView.findViewById(R.id.newsTitle);
             mInfoText = itemView.findViewById(R.id.subTitle);
             mImageView = itemView.findViewById(R.id.sportsImage);
             itemView.setOnClickListener(this);
@@ -111,6 +111,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
         void bindTo(Sport currentSport){
             //Populate the textviews with data
             mTitleText.setText(currentSport.getTitle());
+            mNewsHeading.setText(currentSport.getNewsHeading());
             mInfoText.setText(currentSport.getInfo());
             Glide.with(mContext).load(currentSport.getImageResource()).into(mImageView);
         }
@@ -119,8 +120,9 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
         public void onClick(View v) {
             Sport currentSport = mSportsData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("title", currentSport.getTitle());
             detailIntent.putExtra("image_resource", currentSport.getImageResource());
+            detailIntent.putExtra("heading", currentSport.getNewsHeading());
+            detailIntent.putExtra("info", currentSport.getInfo());
             mContext.startActivity(detailIntent);
         }
     }

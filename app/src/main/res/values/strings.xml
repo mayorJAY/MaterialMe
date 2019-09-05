@@ -33,6 +33,20 @@
         <item>Tennis</item>
     </string-array>
 
+    <string-array name="sports_heading">
+        <item>Baseball News Heading</item>
+        <item>Badminton News Heading</item>
+        <item>Basketball News Heading</item>
+        <item>Bowling News Heading</item>
+        <item>Cycling News Heading</item>
+        <item>Golf News Heading</item>
+        <item>Running News Heading</item>
+        <item>Soccer News Heading</item>
+        <item>Swimming News Heading</item>
+        <item>Table Tennis News Heading</item>
+        <item>Tennis News Heading</item>
+    </string-array>
+
     <string-array name="sports_info">
         <item>Here is some Baseball news!</item>
         <item>Here is some Badminton news!</item>

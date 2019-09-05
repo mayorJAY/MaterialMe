@@ -33,19 +33,24 @@ import java.util.Collections;
  */
 public class MainActivity extends AppCompatActivity {
 
-    //Member variables
-    private RecyclerView mRecyclerView;
     private ArrayList<Sport> mSportsData;
     private SportsAdapter mAdapter;
+    private RecyclerView mRecyclerView;
+    private final String RECYCLER_POSITION_KEY = "recycler_position";
+    private int mPosition = RecyclerView.NO_POSITION;
+    private LinearLayoutManager mLayoutManager;
+    private static Bundle mBundleState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Initialize the RecyclerView
+        //Member variables
         mRecyclerView = findViewById(R.id.recyclerView);
         //Set the Layout Manager
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(this.mLayoutManager);
         //Initialize the ArrayLIst that will contain the data
         mSportsData = new ArrayList<>();
         //Initialize the adapter and set it ot the RecyclerView
@@ -80,22 +85,63 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initializeData() {
         //Get the resources from the XML file
-        String[] sportsList = getResources().getStringArray(R.array.sports_titles);
-        String[] sportsInfo = getResources().getStringArray(R.array.sports_info);
-        TypedArray sportsImageResources = getResources().obtainTypedArray(R.array.sport_images);
+        String[] mSportsList = getResources().getStringArray(R.array.sports_titles);
+        String[] mSportsHeading = getResources().getStringArray(R.array.sports_heading);
+        String[] mSportsInfo = getResources().getStringArray(R.array.sports_info);
+        TypedArray mSportsImageResources = getResources().obtainTypedArray(R.array.sport_images);
         //Clear the existing data (to avoid duplication)
         mSportsData.clear();
         //Create the ArrayList of Sports objects with the titles and information about each sport
-        for(int i=0;i<sportsList.length;i++){
-            mSportsData.add(new Sport(sportsList[i],sportsInfo[i], sportsImageResources.getResourceId(i, 0)));
+        for(int i = 0; i< mSportsList.length; i++){
+            mSportsData.add(new Sport(mSportsList[i], mSportsHeading[i], mSportsInfo[i], mSportsImageResources.getResourceId(i, 0)));
         }
         //Clean up the data in the typed array once the Sport data ArrayList has been created
-        sportsImageResources.recycle();
+        mSportsImageResources.recycle();
         //Notify the adapter of the change
         mAdapter.notifyDataSetChanged();
     }
 
     public void resetSports(View view) {
         initializeData();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Save RecyclerView state
+        mBundleState = new Bundle();
+        mPosition = mLayoutManager.findFirstCompletelyVisibleItemPosition();
+        mBundleState.putInt(RECYCLER_POSITION_KEY, mPosition);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Restore RecyclerView state
+        if (mBundleState != null){
+            mPosition = mBundleState.getInt(RECYCLER_POSITION_KEY);
+            if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
+            // Scroll the RecyclerView to mPosition
+            mRecyclerView.smoothScrollToPosition(mPosition);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // Save RecyclerView state
+        outState.putInt(RECYCLER_POSITION_KEY, mLayoutManager.findFirstCompletelyVisibleItemPosition());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        // Restore RecyclerView state
+        if (savedInstanceState.containsKey(RECYCLER_POSITION_KEY)){
+            mPosition = savedInstanceState.getInt(RECYCLER_POSITION_KEY);
+            if (mPosition == RecyclerView.NO_POSITION) mPosition = 0;
+            // Scroll the RecyclerView to mPosition
+            mRecyclerView.smoothScrollToPosition(mPosition);
+        }
+        super.onRestoreInstanceState(savedInstanceState);
     }
 }

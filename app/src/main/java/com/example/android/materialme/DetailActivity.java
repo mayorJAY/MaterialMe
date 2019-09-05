@@ -13,12 +13,24 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        TextView sportsTitle = findViewById(R.id.title_detail);
-        ImageView sportsImage = findViewById(R.id.sportsImage_detail);
+        TextView mNewsHeading = findViewById(R.id.title_detail);
+        TextView mNewsDetail = findViewById(R.id.newsTitle_detail);
+        ImageView mSportsImage = findViewById(R.id.sportsImage_detail);
         Bundle extras = getIntent().getExtras();
-        if (extras != null){
-            sportsTitle.setText(getIntent().getStringExtra("title"));
-            Glide.with(this).load(getIntent().getIntExtra("image_resource", 0)).into(sportsImage);
-        }
+            if (extras != null){
+                mNewsHeading.setText(getIntent().getStringExtra("heading"));
+                mNewsDetail.setText(getIntent().getStringExtra("info"));
+                Glide.with(this).load(getIntent().getIntExtra("image_resource", 0)).into(mSportsImage);
+            }
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        String NEWS_HEADING_KEY = "heading";
+        outState.putString(NEWS_HEADING_KEY, getIntent().getStringExtra("heading"));
+        String NEWS_INFO_KEY = "info";
+        outState.putString(NEWS_INFO_KEY, getIntent().getStringExtra("info"));
+        super.onSaveInstanceState(outState);
     }
 }
