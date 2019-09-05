@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_35958ae38a0366c693f2d59c10928f9024c209a4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="787871951412550519b0222aba3c9df4cea49875">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.1_6012ca52bce301e7eb500e9fc314d040b660ada3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.1_a16fa93ce591b574c6ed8e069dc3331632efd5a1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.1_d9173f3bf803bb136f429cb8925c204ad4300d92.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_07d67a7bbcce9185d31e4cf78a2ae0001412ca0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_01e54a870dd0137d2f976238a91efee4d45baabc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Users\JOSYCOM\AndroidStudioProjects\MaterialMe-Starter\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.1_ea164f738122f13566fb4ba6534adb4765a431da.jar" />
+    </item>
+
+</items>
