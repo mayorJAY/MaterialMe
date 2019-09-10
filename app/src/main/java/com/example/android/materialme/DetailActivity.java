@@ -20,6 +20,8 @@ public class DetailActivity extends AppCompatActivity {
             if (extras != null){
                 mNewsHeading.setText(getIntent().getStringExtra("heading"));
                 mNewsDetail.setText(getIntent().getStringExtra("info"));
+                String imageTransitionName = extras.getString("transition_name");
+                mSportsImage.setTransitionName(imageTransitionName);
                 Glide.with(this).load(getIntent().getIntExtra("image_resource", 0)).into(mSportsImage);
             }
     }

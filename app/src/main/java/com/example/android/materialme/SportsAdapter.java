@@ -18,6 +18,8 @@ package com.example.android.materialme;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +30,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /***
  * The adapter class for the RecyclerView, contains the sports data
@@ -37,6 +40,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
     //Member variables
     private ArrayList<Sport> mSportsData;
     private Context mContext;
+    private MainActivity mainActivity = new MainActivity();
 
     /**
      * Constructor that passes in the sports data and the context
@@ -69,6 +73,7 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
     public void onBindViewHolder(SportsAdapter.ViewHolder holder, int position) {
         //Get current sport
         Sport currentSport = mSportsData.get(position);
+        ViewCompat.setTransitionName(holder.mImageView, currentSport.getTitle());
         //Populate the textviews with data
         holder.bindTo(currentSport);
     }
@@ -123,7 +128,9 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder>{
             detailIntent.putExtra("image_resource", currentSport.getImageResource());
             detailIntent.putExtra("heading", currentSport.getNewsHeading());
             detailIntent.putExtra("info", currentSport.getInfo());
-            mContext.startActivity(detailIntent);
+            detailIntent.putExtra("transition_name", ViewCompat.getTransitionName(mImageView));
+            //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(mainActivity.getParent(), mImageView, "transition");
+            mContext.startActivity(detailIntent);//options.toBundle()
         }
     }
 }

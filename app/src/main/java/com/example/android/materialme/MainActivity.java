@@ -31,7 +31,7 @@ import java.util.Collections;
 /***
  * Main Activity for the Material Me app, a mock sports news application with poor design choices
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private ArrayList<Sport> mSportsData;
     private SportsAdapter mAdapter;
@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         //Get the data
         initializeData();
+        //Enables moving and swiping of items on the list of Cards
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper
                 .SimpleCallback(ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT | ItemTouchHelper.DOWN | ItemTouchHelper.UP,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
