@@ -1,0 +1,78 @@
+<!--
+  Copyright 2016 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Material Me!</string>
+    <string name="title_placeholder">Titre</string>
+    <string name="news_placeholder">Nouvelles</string>
+    <string name="sports_info_placeholder">Voici quelques nouvelles</string>
+
+    <string-array name="sports_titles">
+        <item>Base-ball</item>
+        <item>Badminton</item>
+        <item>Basketball</item>
+        <item>Bowling</item>
+        <item>Cyclisme</item>
+        <item>Le Golf</item>
+        <item>La course</item>
+        <item>Football</item>
+        <item>La Natation</item>
+        <item>Tennis de table</item>
+        <item>Tennis</item>
+    </string-array>
+
+    <string-array name="sports_heading">
+        <item>Titre de Nouvelles de Baseball</item>
+        <item>Titre de Nouvelles de Badminton</item>
+        <item>Titre de Nouvelles de Basket-ball</item>
+        <item>Titre de Nouvelles de Bowling</item>
+        <item>Titre de Nouvelles de Cyclisme</item>
+        <item>Titre de Nouvelles de Golf</item>
+        <item>Titre de Nouvelles de Course</item>
+        <item>Titre de Nouvelles de Football</item>
+        <item>Titre de Nouvelles de Natation</item>
+        <item>Titre de Nouvelles de Tennis de Table</item>
+        <item>Titre de Nouvelles de Tennis</item>
+    </string-array>
+
+    <string-array name="sports_info">
+        <item>Voici quelques nouvelles du baseball!</item>
+        <item>Voici quelques nouvelles du badminton!</item>
+        <item>Voici quelques nouvelles du Basket-ball!</item>
+        <item>Voici quelques nouvelles du Bowling!</item>
+        <item>Voici quelques nouvelles du Cyclisme!</item>
+        <item>Voici quelques nouvelles du Golf!</item>
+        <item>Voici quelques nouvelles du Course!</item>
+        <item>Voici quelques nouvelles du Football!</item>
+        <item>Voici quelques nouvelles du Natation!</item>
+        <item>Voici quelques nouvelles du Table de Tennis!</item>
+        <item>Voici quelques nouvelles du Tennis!</item>
+    </string-array>
+
+    <array name="sport_images">
+        <item>@drawable/img_baseball</item>
+        <item>@drawable/img_badminton</item>
+        <item>@drawable/img_basketball</item>
+        <item>@drawable/img_bowling</item>
+        <item>@drawable/img_cycling</item>
+        <item>@drawable/img_golf</item>
+        <item>@drawable/img_running</item>
+        <item>@drawable/img_soccer</item>
+        <item>@drawable/img_swimming</item>
+        <item>@drawable/img_tabletennis</item>
+        <item>@drawable/img_tennis</item>
+    </array>
+
+</resources>
